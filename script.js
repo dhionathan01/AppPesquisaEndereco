@@ -5,6 +5,8 @@ function getDadosEnderecoPorCEP(cep) {
 
     let xmlHttp = new XMLHttpRequest();
     xmlHttp.open('GET', url);
+    xmlHttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+    xmlHttp.setRequestHeader('Content-Type', 'application/json'); // Atribuição de tipo de documento a receber
     xmlHttp.onreadystatechange = () => {
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
             let dadosJSONText = xmlHttp.responseText;
